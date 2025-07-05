@@ -1,12 +1,12 @@
 import { GoogleGenerativeAI } from "@google/generative-ai";
 import { GoogleGenerativeAIStream, StreamingTextResponse } from "ai";
-import { auth } from "@/app/api/auth/[...nextauth]/route";
+import { auth } from "../../../auth";
 import { PrismaClient } from '@prisma/client';
 
 const genAI = new GoogleGenerativeAI(process.env.GOOGLE_API_KEY);
 const prisma = new PrismaClient();
 
-export const runtime = "edge";
+// export const runtime = "edge";
 
 export async function POST(req) {
   const session = await auth();
@@ -16,7 +16,11 @@ export async function POST(req) {
   const userId = session.user.id;
 
   try {
-    const { message } = await req.json();
+    const { messages } = await req.json();
+
+    const currentMessage = messages[messages.length - 1];
+
+    const message = currentMessage.content;
 
     // 1. 사용자 메시지를 DB에 저장
     await prisma.message.create({

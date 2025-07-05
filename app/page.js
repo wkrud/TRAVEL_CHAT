@@ -1,4 +1,5 @@
-import { auth } from "./api/auth/[...nextauth]/route";
+// import { auth } from "./api/auth/[...nextauth]/route";
+import {auth} from "../auth";
 import { Login } from "./components/Auth";
 import AppUI from "./components/AppUI"; // 새로 만들 컴포넌트
 import { PrismaClient } from '@prisma/client';
