@@ -6,7 +6,7 @@ import ChatClient from "./ChatClient";
 
 // 중요: 여기에 임베드할 스프레드시트의 URL을 입력하세요.
 // Google Sheets: '파일' > '웹에 게시' > '삽입'에서 URL을 얻을 수 있습니다.
-const SPREADSHEET_URL = "https://docs.google.com/spreadsheets/d/e/2PACX-1vT-g6D_g_g_g_g/pubhtml?widget=true&amp;headers=false";
+const SPREADSHEET_URL = "https://docs.google.com/spreadsheets/d/1aTGZtxgsvaAXBmI2hJ9-ZLbO-KatuLvVBmtSeQ5BmHU/edit?gid=0#gid=0";
 
 export default function AppUI({ user, initialMessages }) {
   // 모바일 뷰에서 활성화된 탭을 관리하는 상태 ('spreadsheet' 또는 'chat')
