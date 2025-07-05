@@ -3,6 +3,7 @@
 import { useState } from 'react';
 import { LogoutButton } from "./Auth";
 import ChatClient from "./ChatClient";
+import { SpeedInsights } from "@vercel/speed-insights/next"
 
 // 중요: 여기에 임베드할 스프레드시트의 URL을 입력하세요.
 // Google Sheets: '파일' > '웹에 게시' > '삽입'에서 URL을 얻을 수 있습니다.
@@ -13,7 +14,7 @@ export default function AppUI({ user, initialMessages }) {
   const [activeTab, setActiveTab] = useState('spreadsheet');
 
   return (
-    <div className="page-container">
+    <div className="page-container"><SpeedInsights/>
       <header className="page-header">
         <h1>Gemini & Sheets</h1>
         <LogoutButton userName={user.name} />
