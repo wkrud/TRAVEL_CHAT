@@ -1,0 +1,25 @@
+{
+  "name": "gemini-chat-login",
+  "version": "0.1.0",
+  "private": true,
+  "scripts": {
+    "dev": "next dev",
+    "build": "prisma generate && next build",
+    "start": "next start",
+    "lint": "next lint",
+    "postinstall": "prisma generate"
+  },
+  "dependencies": {
+    "@auth/prisma-adapter": "^2.4.1",
+    "@google/generative-ai": "^0.14.1",
+    "@prisma/client": "^5.17.0",
+    "ai": "^3.2.1",
+    "next": "14.2.5",
+    "next-auth": "5.0.0-beta.19",
+    "react": "^18",
+    "react-dom": "^18"
+  },
+  "devDependencies": {
+    "prisma": "^5.17.0"
+  }
+}
